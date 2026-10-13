@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Julian Topup | ហាងបញ្ចូលគ្រាប់ពេជ្រហ្គេម</title>
+<meta name="description" content="បញ្ចូលគ្រាប់ពេជ្រហ្គេម រហ័ស តម្លៃច្បាស់លាស់ បង់តាម KHQR។">
+<meta name="theme-color" content="#3355F5">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Julian Topup | ហាងបញ្ចូលគ្រាប់ពេជ្រហ្គេម">
+<meta property="og:description" content="បញ្ចូលគ្រាប់ពេជ្រហ្គេម រហ័ស តម្លៃច្បាស់លាស់ បង់តាម KHQR។">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Kantumruy+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F5FF; --surface:#FFFFFF; --tile:#EBEEFF; --ink:#12153A; --muted:#565C8C; --line:#D5DAF3;
+  --accent:#3355F5; --accent-ink:#FFFFFF; --mint:#0FB894; --danger:#C2255C;
+  --price:#000; --glow:rgba(51,85,245,.12); --shadow:rgba(30,40,120,.20);
+  --font-display:'Koulen','Noto Sans Khmer',system-ui,sans-serif;
+  --font-body:'Kantumruy Pro','Noto Sans Khmer',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:light dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0D26; --surface:#141838; --tile:#1C2150; --ink:#EDEFFF; --muted:#A3A9DA; --line:#2B3172;
+    --accent:#7C93FF; --accent-ink:#0B0D26; --mint:#3EE6BF; --danger:#FF7BA9;
+    --price:#fff; --glow:rgba(124,147,255,.14); --shadow:rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0D26; --surface:#141838; --tile:#1C2150; --ink:#EDEFFF; --muted:#A3A9DA; --line:#2B3172;
+  --accent:#7C93FF; --accent-ink:#0B0D26; --mint:#3EE6BF; --danger:#FF7BA9;
+  --price:#fff; --glow:rgba(124,147,255,.14); --shadow:rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+:root[data-theme="light"]{color-scheme:light}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.8;overflow-x:hidden}
+h1,h2,h3,p,dl,dd,ul{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+[hidden]{display:none !important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1180px,100% - 2*clamp(16px,4vw,40px));margin-inline:auto}
+.muted{color:var(--muted)}
+.skip{position:absolute;left:12px;top:-60px;background:var(--accent);color:var(--accent-ink);padding:8px 16px;border-radius:8px;z-index:100}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 8px)}
+
+/* Buttons */
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.5rem;border:0;cursor:pointer;text-decoration:none;font-weight:700;background:var(--accent);color:var(--accent-ink);--cut:10px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));transition:filter .15s}
+.btn:hover{filter:brightness(1.1)}
+.btn:focus-visible{clip-path:none;border-radius:8px}
+.btn.ghost{background:var(--tile);color:var(--ink)}
+.btn.inverse{background:var(--accent-ink);color:var(--accent)}
+.btn.small{min-height:40px;padding:0 1.1rem;font-size:.95rem}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.2rem;line-height:1}
+.brand svg{width:30px;height:28px;color:var(--accent)}
+.brand span{font-weight:400;color:var(--muted)}
+.nav{display:flex;gap:6px;margin-left:auto}
+.nav a{padding:8px 14px;text-decoration:none;font-weight:600;color:var(--muted);border-radius:8px}
+.nav a:hover{color:var(--ink);background:var(--tile)}
+.bar-actions{display:flex;align-items:center;gap:10px}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);border-radius:12px;cursor:pointer}
+.icon-btn svg{width:20px;height:20px}
+.icon-btn .moon{display:none}
+:root[data-theme="dark"] .icon-btn .sun{display:none}
+:root[data-theme="dark"] .icon-btn .moon{display:block}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .icon-btn .sun{display:none}
+  :root:not([data-theme="light"]) .icon-btn .moon{display:block}
+}
+@media (max-width:760px){.nav{display:none}.bar-actions{margin-left:auto}}
+@media (max-width:420px){.bar{gap:10px}.brand{font-size:1.05rem;gap:8px}.brand svg{width:26px;height:24px}.bar-actions{gap:8px}.btn.small{padding:0 .9rem;font-size:.9rem}}
+
+/* Banner */
+.banner-sec{padding-block:clamp(14px,3vw,32px) clamp(20px,3vw,36px)}
+.banner-wrap{width:min(100%,1000px);margin-inline:auto;filter:drop-shadow(0 14px 26px var(--shadow))}
+.banner{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;aspect-ratio:1000/600;padding:clamp(18px,5vw,64px);color:#fff;background:linear-gradient(115deg,#1A2BB8 0%,#3355F5 48%,#1BB79F 100%);border-radius:clamp(18px,3.5vw,32px)}
+.banner::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.09);clip-path:polygon(46% 0,100% 0,100% 100%,22% 100%)}
+.banner::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,.10);clip-path:polygon(0 0,30% 0,8% 100%,0 100%)}
+.banner-text{position:relative;max-width:min(50%,30rem)}
+.banner-name{font-family:var(--font-display);font-weight:400;font-size:clamp(1.9rem,7vw,4rem);line-height:1.4;letter-spacing:0}
+.banner-sub{margin-top:4px;font-weight:600;font-size:clamp(.88rem,2.2vw,1.15rem);line-height:1.7}
+.banner-gem{position:absolute;right:-4%;top:50%;height:82%;width:auto;filter:drop-shadow(0 18px 24px rgba(0,0,20,.35));transform:translateY(-50%) perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out}
+
+/* Ticker */
+.ticker{display:flex;background:var(--surface);border-block:1px solid var(--line)}
+.ticker-label{flex:none;display:flex;align-items:center;padding:0 30px 0 clamp(16px,4vw,40px);background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.95rem;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+.ticker-view{flex:1;overflow:hidden}
+.track{display:flex;width:max-content;animation:scroll 55s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.set{display:flex}
+.tk{display:flex;align-items:center;gap:8px;padding:12px 28px;white-space:nowrap;font-size:.95rem;line-height:1.6}
+.tk svg{width:14px;height:13px;color:var(--mint)}
+.tk b{font-weight:700}
+.tk i{font-style:normal;color:var(--muted)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .track{animation:none}
+  .ticker-view{overflow-x:auto}
+  .banner-gem{transition:none}
+}
+
+/* Sections */
+.section{padding-block:clamp(48px,8vw,104px)}
+.section-head{margin-bottom:clamp(22px,4vw,44px);max-width:36rem}
+.section-head h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.6}
+.section-head p{margin-top:4px;color:var(--muted)}
+
+/* Game catalog: 3 columns on phones */
+.game-grid{display:grid;gap:10px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:720px){.game-grid{gap:18px;grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:1100px){.game-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.gwrap{filter:drop-shadow(0 6px 10px color-mix(in srgb,var(--shadow) 55%,transparent))}
+.gcard{display:flex;flex-direction:column;gap:8px;width:100%;height:100%;padding:7px 7px 9px;border:0;background:var(--surface);color:var(--ink);text-align:center;cursor:pointer;--cut:14px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));transition:background .15s}
+.gcard:hover{background:var(--tile)}
+.gcard:focus-visible{clip-path:none;border-radius:10px}
+.gn{flex:1;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;line-height:1.4;padding-inline:2px}
+.go{display:block;padding:6px 0;background:var(--accent);color:var(--accent-ink);border-radius:8px;font-weight:700;font-size:.78rem;line-height:1.6;letter-spacing:.04em}
+@media (min-width:720px){.gcard{padding:10px 10px 12px;gap:10px}.gn{font-size:.98rem}.go{padding:8px 0;font-size:.9rem}}
+
+/* Generated cover art (no third-party artwork) */
+.cover{position:relative;display:block;aspect-ratio:1;overflow:hidden;border-radius:10px;background:linear-gradient(150deg,color-mix(in srgb,var(--tint) 68%,#fff),var(--tint) 55%,color-mix(in srgb,var(--tint) 62%,#000))}
+.cover .bg{position:absolute;width:125%;height:auto;right:-30%;top:-18%;color:#fff;opacity:.2;transform:rotate(14deg)}
+.cover .bg2{position:absolute;width:55%;height:auto;left:-8%;bottom:6%;color:#fff;opacity:.12;transform:rotate(-16deg)}
+.cover .mono{position:absolute;left:0;right:0;top:46%;transform:translateY(-55%);text-align:center;font-family:var(--font-display);font-size:clamp(1.5rem,8vw,2.7rem);line-height:1.3;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.25)}
+.cover .reg{position:absolute;left:0;right:0;bottom:0;padding:16px 4px 5px;background:linear-gradient(transparent,rgba(0,0,0,.62));color:#fff;text-align:center;font-size:.56rem;font-weight:700;line-height:1.2;letter-spacing:.06em}
+@media (min-width:720px){.cover .mono{font-size:2.6rem}.cover .reg{font-size:.68rem;padding:20px 4px 7px}}
+
+/* Mode switch: Topup Diamond vs Buy Account */
+.mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:560px;margin-inline:auto;filter:drop-shadow(0 6px 12px color-mix(in srgb,var(--shadow) 45%,transparent))}
+.mode-btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1rem;border:0;cursor:pointer;font-weight:700;font-size:.98rem;background:var(--tile);color:var(--ink);--cut:10px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));transition:filter .15s,background .15s,color .15s}
+.mode-btn:hover{filter:brightness(1.06)}
+.mode-btn[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+@media (max-width:480px){.mode-btn{font-size:.86rem;padding:0 .6rem}}
+
+/* Account catalog (Buy Account Game) */
+.acc-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:640px){.acc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.acc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.acard{display:flex;gap:14px;padding:14px;background:var(--surface);--cut:16px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));filter:drop-shadow(0 6px 12px color-mix(in srgb,var(--shadow) 45%,transparent))}
+.acard .cover{flex:none;width:88px;border-radius:12px}
+.acard .cover .mono{font-size:1.3rem}
+.acard .cover .reg{font-size:.5rem;padding:10px 4px 4px;letter-spacing:.04em}
+.acard{min-height:150px}
+.ac-body{min-width:0;display:flex;flex-direction:column;gap:6px;flex:1}
+.ac-title{font-weight:700;font-size:1rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.ac-specs{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex-wrap:wrap;gap:4px 10px;font-size:.8rem;color:var(--muted);line-height:1.5;min-height:3em}
+.ac-price{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:6px}
+.ac-price strong{font-size:1.15rem;line-height:1.4;color:var(--price)}
+.ac-price .btn{min-height:38px;padding:0 1rem;font-size:.85rem}
+.acard .cover{position:relative;cursor:pointer;border:0;padding:0;aspect-ratio:auto;align-self:stretch}
+.acard .cover .zoom{position:absolute;right:5px;bottom:5px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff}
+.acard .cover .zoom svg{width:12px;height:12px}
+
+/* Photo viewer dialog */
+#buyDialog{width:100%;max-width:480px;max-height:92dvh;margin:auto;padding:0;border:0;border-radius:22px;background:var(--surface);color:var(--ink);overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+#buyDialog::backdrop{background:rgba(8,10,30,.6)}
+#buyDialog[open]{animation:sheet-up .22s ease-out}
+#photoDialog{width:100%;max-width:480px;max-height:92dvh;margin:auto;padding:0;border:0;border-radius:22px;background:var(--surface);color:var(--ink);overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+#photoDialog::backdrop{background:rgba(8,10,30,.6)}
+#photoDialog[open]{animation:sheet-up .22s ease-out}
+.ph-body{padding:16px}
+.ph-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.ph-head h2{font-family:var(--font-display);font-weight:400;font-size:1.25rem;line-height:1.5;outline:none}
+.ph-close{flex:none;width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:50%;background:var(--tile);color:var(--ink);cursor:pointer}
+.ph-close svg{width:16px;height:16px}
+.ph-main{position:relative;width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--tile)}
+.ph-main img{display:block;width:100%;height:100%;object-fit:cover}
+.ph-main .cover{width:100%;height:100%;aspect-ratio:auto;cursor:default}
+.ph-thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:2px}
+.ph-thumbs button{flex:none;width:60px;height:46px;padding:0;border:2px solid transparent;border-radius:9px;overflow:hidden;background:var(--tile);cursor:pointer;opacity:.65}
+.ph-thumbs button.active{opacity:1;border-color:var(--accent)}
+.ph-thumbs img{display:block;width:100%;height:100%;object-fit:cover}
+.ph-specs{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 10px;font-size:.85rem;color:var(--muted);line-height:1.5}
+.ph-foot{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ph-foot strong{font-size:1.3rem;line-height:1.4;color:var(--price)}
+.ph-foot .btn{min-height:46px}
+
+/* Features / how / faq */
+.feat-grid{display:grid;gap:12px;grid-template-columns:1fr;filter:drop-shadow(0 6px 12px color-mix(in srgb,var(--shadow) 55%,transparent))}
+@media (min-width:820px){.feat-grid{gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}}
+.feat{background:var(--surface);padding:22px 22px 24px;--cut:18px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.feat svg{display:block;width:48px;height:48px;padding:11px;margin-bottom:10px;background:var(--tile);border-radius:12px;color:var(--accent)}
+.feat h3{font-size:1.2rem;line-height:1.6;font-weight:700}
+.feat p{margin-top:2px;color:var(--muted)}
+.site-footer{padding-block:36px 48px;color:var(--muted);font-size:.9rem;line-height:1.8}
+.site-footer p{max-width:46rem}
+
+/* Game page (price table) */
+.gpage{padding-block:clamp(12px,3vw,40px) clamp(56px,8vw,96px)}
+.gpage .wrap{width:min(760px,100% - 2*clamp(16px,4vw,40px))}
+.gp-grid{display:grid;gap:16px}
+.gbanner{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;gap:clamp(12px,3vw,24px);aspect-ratio:1000/420;padding:clamp(14px,4vw,32px);color:#fff;border-radius:clamp(16px,3.5vw,28px);background:linear-gradient(120deg,color-mix(in srgb,var(--tint) 58%,#000),var(--tint) 55%,color-mix(in srgb,var(--tint) 62%,#fff))}
+.gbanner::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.10);clip-path:polygon(50% 0,100% 0,100% 100%,26% 100%)}
+.gb-gem{position:absolute;right:-5%;top:50%;height:125%;width:auto;transform:translateY(-50%) rotate(10deg);color:#fff;opacity:.16;z-index:-1}
+.gb-cover{display:block;flex:none;width:clamp(80px,23vw,150px)}
+.gb-cover .cover{border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.32)}
+.gb-cover .cover .mono{font-size:clamp(1.4rem,6vw,2.6rem)}
+.gb-cover .reg{display:none}
+.gb-text{min-width:0}
+.gp-title{font-family:var(--font-display);font-weight:400;font-size:clamp(1.35rem,4.8vw,2.4rem);line-height:1.5;outline:none}
+.gb-region{font-weight:700;font-size:.78rem;letter-spacing:.06em;opacity:.9;line-height:1.6}
+.gb-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.gb-badges li{display:flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;background:rgba(0,0,0,.24);font-size:.76rem;font-weight:600;line-height:1.7}
+.gb-badges svg{width:14px;height:14px;flex:none}
+.widget-wrap{filter:drop-shadow(0 20px 34px var(--shadow))}
+.widget{background:var(--surface);padding:clamp(14px,4vw,30px);display:grid;gap:26px;--cut:24px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+fieldset{margin:0;padding:0;border:0;min-width:0}
+legend{display:flex;align-items:center;gap:10px;padding:0;margin-bottom:12px;font-weight:700}
+.n{display:grid;place-items:center;width:28px;height:28px;background:var(--accent);color:var(--accent-ink);font-family:var(--font-display);font-size:1rem;line-height:1;--cut:8px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.opts{display:grid;gap:10px}
+.opts.packs{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 8px}
+@media (min-width:640px){.opts.packs{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 10px}}
+.opts.pays{grid-template-columns:1fr}
+@media (min-width:640px){.opts.pays{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.opt{display:block;position:relative;cursor:pointer;border-radius:4px}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opt:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:3px}
+.tile{display:flex;height:100%;background:var(--tile);--cut:10px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));transition:background .15s,color .15s}
+.opt:hover .tile{background:color-mix(in srgb,var(--accent) 16%,var(--tile))}
+.opt input:checked + .tile{background:var(--accent);color:var(--accent-ink)}
+.tile.pack{flex-direction:column;align-items:center;text-align:center;gap:5px;padding:10px 4px 9px}
+.pi{flex:none;width:76%;max-width:92px;aspect-ratio:1/1;height:auto;border-radius:10px;background:var(--surface);overflow:hidden}
+.pi svg{display:block;width:100%;height:100%}
+.pi img{display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}
+.pi .a{color:var(--accent)}
+.pi .b{color:var(--mint)}
+.pt{min-width:0;display:grid;justify-items:center;line-height:1.3}
+.pack .amt{font-size:.98rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.35}
+.pack .amt small{display:block;margin:0;font-size:.66rem;font-weight:600;opacity:.8;line-height:1.4}
+.pack .price{margin-top:2px;font-weight:700;font-size:.92rem;line-height:1.4;color:var(--price)}
+.opt input:checked + .tile .price{color:inherit}
+.pack .riel{font-size:.7rem;opacity:.75;line-height:1.4}
+@media (min-width:640px){.tile.pack{padding:12px 6px 10px}.pi{width:72%;max-width:104px;height:auto;border-radius:12px}.pack .amt{font-size:1.05rem}.pack .price{font-size:.98rem}}
+.tag{position:absolute;top:-10px;left:50%;transform:translateX(-50%);z-index:1;pointer-events:none;white-space:nowrap;background:#FFC94A;color:#3A2800;font-size:.66rem;font-weight:700;line-height:1;padding:4px 9px 5px;border-radius:999px}
+.tile.pay{width:100%;align-items:center;gap:12px;padding:12px 14px;position:relative;overflow:hidden;min-height:68px}
+.pl{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:10px;background:var(--pc);color:#fff;font-weight:700;font-size:.85rem;line-height:1}
+.pn{font-weight:700;line-height:1.5}
+.pd{font-size:.84rem;opacity:.8;line-height:1.5}
+.ck{display:none;position:absolute;top:0;right:0;width:42px;height:42px;background:#E11D48;clip-path:polygon(0 0,100% 0,100% 100%)}
+.ck svg{position:absolute;top:5px;right:5px;width:18px;height:18px;color:#fff}
+.opt input:checked + .pay .ck{display:block}
+
+.fields{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.fields.solo{grid-template-columns:1fr}
+.field{display:grid;gap:6px;align-content:start}
+.field label{font-weight:600;font-size:.95rem}
+.field input{width:100%;min-height:48px;padding:0 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--tile);font-size:1.05rem;letter-spacing:.04em}
+.field input::placeholder{color:var(--muted);opacity:.7;letter-spacing:0}
+.field input:focus-visible{outline-offset:2px;border-color:var(--accent)}
+.field input[aria-invalid="true"]{border-color:var(--danger)}
+.err{color:var(--danger);font-size:.88rem;line-height:1.6;font-weight:600}
+.err:empty{display:none}
+.hint{margin-top:8px;font-size:.88rem;color:var(--muted);line-height:1.6}
+.check{width:100%;margin-top:12px}
+.check-result{margin-top:10px;padding:10px 14px;border-radius:12px;background:var(--tile);font-size:.92rem;line-height:1.7}
+.check-result b{display:block;font-size:1rem}
+.check-result.ok{border-left:4px solid var(--mint)}
+
+.checkout{display:grid;gap:12px;padding-top:20px;border-top:1px dashed var(--line)}
+.sum{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sum .lbl{color:var(--muted);font-size:.95rem;line-height:1.5}
+.sum .pk{font-weight:600;line-height:1.5}
+.sum .tot{text-align:right}
+.sum .tot strong{display:block;font-size:2rem;line-height:1.3;font-variant-numeric:tabular-nums}
+.sum .tot span{color:var(--muted);font-size:.9rem;line-height:1.5}
+.checkout .btn{width:100%;min-height:54px;font-size:1.1rem}
+.note{font-size:.85rem;color:var(--muted);line-height:1.6;text-align:center}
+
+
+#dlgTitle{outline:none}
+.tile.pay .pt{justify-items:start;text-align:left}
+
+/* ===== KHQR bottom sheet + receipt ===== */
+#orderDialog{--kh:#E1232E;--ink2:#12153A;--muted2:#6B7099;--line2:#C9CDE6;width:100%;max-width:520px;max-height:94dvh;margin:auto auto 0;padding:0;border:0;border-radius:26px 26px 0 0;background:#fff;color:var(--ink2);overflow:auto;overscroll-behavior:contain;box-shadow:0 -10px 40px rgba(0,0,0,.35)}
+#orderDialog::backdrop{background:rgba(8,10,30,.6)}
+@media (min-width:640px){#orderDialog{margin:auto;border-radius:26px;max-height:92dvh}}
+#orderDialog[open]{animation:sheet-up .28s ease-out}
+@keyframes sheet-up{from{transform:translateY(60px);opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){#orderDialog[open]{animation:none}.spin{animation:none}}
+.sheet{padding-bottom:0}
+.sheet .btn{background:#3355F5;color:#fff;width:100%}
+.sheet .btn.ghost{background:#EEF0FB;color:var(--ink2)}
+.sheet .btn:focus-visible,.kh-dl:focus-visible{outline-color:#3355F5}
+.sheet :focus-visible{outline-color:#3355F5}
+
+.kh-head{position:relative;background:var(--kh);color:#fff;text-align:center;padding:12px 16px 20px;border-radius:26px 26px 0 0}
+.grab{display:block;width:56px;height:5px;margin:0 auto 12px;border-radius:3px;background:rgba(255,255,255,.55)}
+.kh-head h2{margin:0;font-family:var(--font-body);font-weight:700;font-size:2rem;letter-spacing:.06em;line-height:1.3;outline:none}
+.kh-head::after{content:"";position:absolute;right:0;top:100%;width:34px;height:34px;background:var(--kh);clip-path:polygon(0 0,100% 0,100% 100%)}
+.kh-body{padding:22px 24px 24px;text-align:center}
+.kh-info{text-align:left}
+.kh-name{margin:0;font-size:.95rem;letter-spacing:.03em;line-height:1.6}
+.kh-amount{margin:0;display:flex;align-items:baseline;gap:10px;font-size:2.5rem;font-weight:700;line-height:1.3;font-variant-numeric:tabular-nums}
+.kh-amount small{font-size:1rem;font-weight:500}
+.kh-item{margin:0;color:var(--muted2);font-size:.88rem;line-height:1.6}
+.kh-dash{margin:16px -24px 20px;border-top:2px dashed var(--line2)}
+.qr-box{position:relative;width:min(270px,100%);aspect-ratio:1;margin:0 auto}
+#qrImg,#qrImg img{display:block;width:100%;height:100%}
+.qr-box.expired #qrImg{opacity:.08;filter:blur(2px)}
+.qr-expired{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:10px;font-weight:700}
+.qr-expired .btn{width:auto}
+.qr-fail{display:grid;place-content:center;height:100%;padding:12px;font-size:.92rem;line-height:1.7;color:var(--ink2)}
+.qr-timer{margin:6px 0 0;min-height:1.6em;font-size:.88rem;font-weight:600;color:#3355F5;font-variant-numeric:tabular-nums}
+.kh-scan{margin:8px 0 0;font-size:1.2rem;font-weight:700;line-height:1.6}
+.kh-or{margin:0;font-size:1.05rem;line-height:1.6}
+.kh-dl{display:inline-flex;align-items:center;gap:10px;margin:2px auto 0;padding:6px 14px;border:0;background:none;color:#0781A0;font-weight:700;font-size:1.12rem;line-height:1.6;cursor:pointer;border-radius:10px}
+.kh-dl svg{width:26px;height:26px}
+.kh-hint{margin:2px 0 0;color:#8A8FB0;font-size:.95rem;line-height:1.7}
+.kh-hint2{margin:4px 0 0;min-height:1.4em;color:var(--muted2);font-size:.82rem;line-height:1.6}
+.demo-note{margin:10px 0 0;padding:10px 14px;border:1px solid #C2255C;border-radius:12px;background:#FDECEF;color:var(--ink2);font-size:.86rem;line-height:1.7;text-align:left}
+.pay-actions{position:sticky;bottom:0;z-index:2;display:grid;grid-template-columns:1fr 2fr;gap:10px;margin:18px -24px -24px;padding:12px 24px calc(14px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #E6E9F7}
+#closeBtn{order:-1}
+.kh-wait{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 0;color:var(--muted2);font-size:.9rem;line-height:1.6}
+.spin{width:14px;height:14px;border:2px solid var(--line2);border-top-color:#3355F5;border-radius:50%;animation:spin 1s linear infinite}
+
+.rc-head{padding:28px 24px 4px;text-align:center}
+.rc-icon{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 10px;border-radius:50%;color:#fff}
+.rc-icon.paid{background:#16A34A}
+.rc-icon.pending{background:#D97706}
+.rc-icon svg{width:36px;height:36px}
+.rc-head h2{margin:0;font-family:var(--font-display);font-weight:400;font-size:1.6rem;line-height:1.6;outline:none}
+.rc-status{display:inline-block;margin-top:2px;padding:2px 14px;border-radius:999px;font-weight:700;font-size:.85rem;line-height:1.8}
+.rc-status.paid{background:#DCFCE7;color:#166534}
+.rc-status.pending{background:#FEF3C7;color:#92400E}
+.rc-paper{margin:18px 20px 0;padding:18px;background:#F5F6FE;border-radius:14px}
+.rc-brand{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:700}
+.rc-date{color:var(--muted2);font-size:.82rem;font-weight:400}
+.rc-paper dl{margin:12px 0 0;padding-top:12px;border-top:2px dashed var(--line2);display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.95rem;line-height:1.6}
+.rc-paper dt{color:var(--muted2)}
+.rc-paper dd{margin:0;font-weight:700;text-align:right;word-break:break-word}
+.rc-total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:2px dashed var(--line2);font-weight:700}
+.rc-sum{text-align:right}
+.rc-sum strong{display:block;font-size:1.7rem;line-height:1.3;font-variant-numeric:tabular-nums}
+.rc-sum span{color:var(--muted2);font-size:.85rem;font-weight:400}
+.rc-note{margin:14px 24px 0;color:var(--muted2);font-size:.9rem;line-height:1.7;text-align:center}
+.rc-actions{display:grid;gap:10px;padding:16px 20px calc(22px + env(safe-area-inset-bottom,0px))}
+.rc-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rc-two .btn{padding:0 .8rem;font-size:.92rem}
+#dlgTitle,#rcTitle{outline:none}
+
+/* ប៊ូតុងជ្រើសប្រភេទសេវា ពេលមិនទាន់ចុច: ផ្ទៃសដិត អក្សរខ្មៅ */
+.mode-btn{background:#fff;color:#000}
+.mode-btn[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost.check,.check.on,.check:active{background:var(--accent);color:var(--accent-ink);filter:none}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-gem" viewBox="0 0 24 22">
+    <path d="M7 1h10l6 7-11 13L1 8z" fill="currentColor"/>
+    <path d="M1 8h22M7 1l-2 7 7 13M17 1l2 7-7 13M12 1v7" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#games">រំលងទៅបញ្ជីហ្គេម</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Julian Topup">
+      <svg aria-hidden="true"><use href="#i-gem"/></svg>
+      Julian <span>Topup</span>
+    </a>
+    <nav class="nav" aria-label="ម៉ឺនុយ">
+      <a href="#games" data-mode="topup">ហ្គេម</a>
+      <a href="#accounts" data-mode="account">គណនីហ្គេម</a>
+    </nav>
+    <div class="bar-actions">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="ប្តូរពណ៌ផ្ទាំង">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn small tg-link" href="https://t.me/julian_topup" target="_blank" rel="noopener">ទាក់ទងយើង</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ ទំព័រដើម ============ -->
+<div id="homeView">
+  <section class="banner-sec" aria-label="Julian Topup">
+    <div class="wrap">
+      <div class="banner-wrap">
+        <div class="banner" id="banner">
+          <div class="banner-text">
+            <div class="banner-name">Julian Topup</div>
+            <p class="banner-sub">បញ្ចូលគ្រាប់ពេជ្រហ្គេម រហ័ស បង់តាម KHQR</p>
+          </div>
+          <svg class="banner-gem" id="heroGem" viewBox="0 0 240 220" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="gBase" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FFFFFF"/>
+                <stop offset=".5" stop-color="#B9CBFF"/>
+                <stop offset="1" stop-color="#7BF0D8"/>
+              </linearGradient>
+            </defs>
+            <polygon points="75,30 165,30 220,85 120,200 20,85" fill="url(#gBase)"/>
+            <polygon points="20,85 75,30 70,85" fill="#fff" fill-opacity=".45"/>
+            <polygon points="75,30 120,30 120,85 70,85" fill="#3355F5" fill-opacity=".10"/>
+            <polygon points="120,30 165,30 170,85 120,85" fill="#fff" fill-opacity=".6"/>
+            <polygon points="165,30 220,85 170,85" fill="#3355F5" fill-opacity=".14"/>
+            <polygon points="20,85 70,85 120,200" fill="#1A2BB8" fill-opacity=".18"/>
+            <polygon points="70,85 120,85 120,200" fill="#fff" fill-opacity=".35"/>
+            <polygon points="120,85 170,85 120,200" fill="#3355F5" fill-opacity=".08"/>
+            <polygon points="170,85 220,85 120,200" fill="#1A2BB8" fill-opacity=".28"/>
+            <path d="M75 30h90l55 55-100 115L20 85z M20 85h200 M75 30l-5 55 50 115 M165 30l5 55-50 115 M120 30v55" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M196 26l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#fff"/>
+            <path d="M34 150l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#fff" fill-opacity=".8"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" role="region" aria-label="បញ្ជាទិញថ្មីៗ">
+    <div class="ticker-label">បញ្ជាទិញថ្មីៗ</div>
+    <div class="ticker-view"><div class="track" id="track"></div></div>
+  </div>
+
+  <section class="section" style="padding-bottom:0" id="catalog">
+    <div class="wrap">
+      <div class="mode-switch" role="tablist" aria-label="ជ្រើសប្រភេទសេវា">
+        <button class="mode-btn" type="button" id="modeTopupBtn" role="tab" aria-selected="true" aria-controls="games">បញ្ចូលគ្រាប់ពេជ្រ</button>
+        <button class="mode-btn" type="button" id="modeAccountBtn" role="tab" aria-selected="false" aria-controls="accounts">ទិញគណនី</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="games">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>ជ្រើសហ្គេម</h2>
+        <p>ចុចលើហ្គេម ដើម្បីមើលតារាងតម្លៃ។</p>
+      </div>
+      <div class="game-grid" id="gameCards"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" id="accounts" hidden>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>គណនីហ្គេម</h2>
+        <p>គណនីរៀបចំរួច Rank ខ្ពស់ Skin កម្រ សុវត្ថិភាព ១០០%។</p>
+      </div>
+      <div class="acc-grid" id="accCards"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head"><h2>ទិញដោយទំនុកចិត្ត</h2></div>
+      <div class="feat-grid">
+        <div class="feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+          <h3>ដឹកជញ្ជូនរហ័ស</h3>
+          <p>ភាគច្រើនចូលគណនីក្នុង ១ ដល់ ៥ នាទី បន្ទាប់ពីបង់ប្រាក់ជោគជ័យ។</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+          <h3>តម្លៃច្បាស់លាស់</h3>
+          <p>តម្លៃបង្ហាញជាដុល្លារ និងរៀល មុនពេលបង់។ គ្មានថ្លៃលាក់កំបាំង។</p>
+        </div>
+        <div class="feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+          <h3>គណនីមានសុវត្ថិភាព</h3>
+          <p>ត្រូវការតែ Player ID។ យើងមិនដែលសុំពាក្យសម្ងាត់ ឬកូដផ្ទៀងផ្ទាត់ទេ។</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ទំព័រតារាងតម្លៃហ្គេម ============ -->
+<section class="gpage" id="gameView" hidden>
+  <div class="wrap">
+    <div class="gp-grid">
+      <div class="gbanner" id="gBanner">
+        <svg class="gb-gem" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><use href="#i-gem"/></svg>
+        <span class="gb-cover" id="gpCover"></span>
+        <div class="gb-text">
+          <h1 class="gp-title" id="gTitle" tabindex="-1"></h1>
+          <p class="gb-region" id="gRegion"></p>
+          <ul class="gb-badges">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>ការធានាសុវត្ថិភាព</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>ដឹកជញ្ជូនភ្លាមៗ</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="widget-wrap">
+        <form class="widget" id="orderForm" novalidate>
+          <fieldset>
+            <legend><span class="n" aria-hidden="true">១</span>ព័ត៌មានគណនី</legend>
+            <div class="fields" id="fields">
+              <div class="field">
+                <label for="pid" id="pidLabel">Player ID</label>
+                <input id="pid" name="pid" inputmode="numeric" autocomplete="off" aria-describedby="pidErr">
+                <p class="err" id="pidErr" role="alert"></p>
+              </div>
+              <div class="field" id="sidField">
+                <label for="sid">Server ID</label>
+                <input id="sid" name="sid" inputmode="numeric" autocomplete="off" placeholder="ឧ. 2001" aria-describedby="sidErr">
+                <p class="err" id="sidErr" role="alert"></p>
+              </div>
+            </div>
+            <p class="hint" id="idHint"></p>
+            <button class="btn ghost check" id="checkBtn" type="button">ឆែក ID</button>
+            <div class="check-result" id="checkResult" role="status" hidden></div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="n" aria-hidden="true">២</span>តារាងតម្លៃ</legend>
+            <div class="opts packs" id="packList"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="n" aria-hidden="true">៣</span>វិធីបង់ប្រាក់</legend>
+            <div class="opts pays" id="payList"></div>
+          </fieldset>
+
+          <div class="checkout">
+            <div class="sum" aria-live="polite">
+              <div>
+                <div class="lbl">កញ្ចប់ដែលបានជ្រើស</div>
+                <div class="pk" id="sumPack">—</div>
+              </div>
+              <div class="tot">
+                <span>សរុប</span>
+                <strong id="total">—</strong>
+                <span id="totalRiel"></span>
+              </div>
+            </div>
+            <button class="btn" type="submit">បញ្ជាទិញ</button>
+            <p class="note">មិនទាន់កាត់ប្រាក់ទេ។ អ្នកនឹងទទួលបានលេខបញ្ជាទិញ សម្រាប់បង់ប្រាក់នៅជំហានបន្ទាប់។</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Julian Topup។ ឈ្មោះហ្គេមជាកម្មសិទ្ធិរបស់ម្ចាស់ពាក្យសម្គាល់រៀងៗខ្លួន។ យើងមិនមែនជាដៃគូផ្លូវការរបស់ក្រុមហ៊ុនហ្គេមទេ។</p>
+  </div>
+</footer>
+
+<dialog id="photoDialog" aria-label="រូបភាពគណនី">
+  <div class="ph-body">
+    <div class="ph-head">
+      <h2 id="phTitle" tabindex="-1"></h2>
+      <button class="ph-close" type="button" id="phClose" aria-label="បិទ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="ph-main" id="phMain"></div>
+    <div class="ph-thumbs" id="phThumbs"></div>
+    <div class="ph-specs" id="phSpecs"></div>
+    <div class="ph-foot">
+      <strong id="phPrice"></strong>
+      <button class="btn" id="phBuy" type="button">ទិញឥឡូវ</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="buyDialog" aria-label="ទិញគណនី">
+  <form class="ph-body" id="buyForm" novalidate>
+    <div class="ph-head">
+      <h2 id="buyTitle" tabindex="-1">ព័ត៌មានទំនាក់ទំនង</h2>
+      <button class="ph-close" type="button" id="buyClose" aria-label="បិទ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="check-result ok" id="buyItem" style="margin:0 0 14px"></div>
+    <div class="fields solo">
+      <div class="field">
+        <label for="buyName">ឈ្មោះរបស់អ្នក</label>
+        <input id="buyName" autocomplete="name" aria-describedby="buyNameErr">
+        <p class="err" id="buyNameErr" role="alert"></p>
+      </div>
+      <div class="field">
+        <label for="buyPhone">លេខទូរស័ព្ទ</label>
+        <input id="buyPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="ឧ. 012345678" aria-describedby="buyPhoneErr">
+        <p class="err" id="buyPhoneErr" role="alert"></p>
+      </div>
+      <div class="field">
+        <label for="buyTg">Telegram (មិនបង្ខំ)</label>
+        <input id="buyTg" autocomplete="off" placeholder="@username">
+      </div>
+      <div class="field">
+        <label for="buyNote">កំណត់ចំណាំ (មិនបង្ខំ)</label>
+        <input id="buyNote" autocomplete="off">
+      </div>
+    </div>
+    <p class="hint">យើងប្រើព័ត៌មាននេះសម្រាប់ទាក់ទងបញ្ជូនគណនី បន្ទាប់ពីបង់ប្រាក់ជោគជ័យ។</p>
+    <div class="ph-foot">
+      <strong id="buyPrice"></strong>
+      <button class="btn" type="submit">បន្តទៅបង់ប្រាក់</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="orderDialog" aria-label="KHQR">
+  <div class="sheet">
+
+    <!-- ស្កេនបង់ប្រាក់ -->
+    <div id="payView">
+      <div class="kh-head">
+        <span class="grab" aria-hidden="true"></span>
+        <h2 id="dlgTitle" tabindex="-1">KHQR</h2>
+      </div>
+      <div class="kh-body">
+        <div class="kh-info">
+          <p class="kh-name" id="qrName"></p>
+          <p class="kh-amount"><span id="qrAmount"></span><small id="qrCur">USD</small></p>
+          <p class="kh-item" id="qrItem"></p>
+        </div>
+        <div class="kh-dash" aria-hidden="true"></div>
+
+        <div class="qr-box" id="qrBox">
+          <div id="qrImg"></div>
+          <div class="qr-expired" id="qrExpired" hidden>
+            <span>QR ផុតកំណត់ហើយ</span>
+            <button class="btn small" id="qrRenew" type="button">បង្កើត QR ថ្មី</button>
+          </div>
+        </div>
+        <p class="qr-timer" id="qrTimer" role="timer"></p>
+
+        <p class="kh-scan">ស្កេនដើម្បីបង់ប្រាក់</p>
+        <p class="kh-or">ឬ</p>
+        <button class="kh-dl" id="qrDownload" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 15v3a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-3"/></svg>
+          ទាញយក QR
+        </button>
+        <p class="kh-hint">ហើយបញ្ចូលក្នុងកម្មវិធីធនាគារដែលគាំទ្រ KHQR</p>
+        <p class="kh-hint2" id="dlNote" role="status"></p>
+
+        <p class="demo-note" id="demoNote" hidden>QR នេះជាគំរូ មិនអាចបង់ប្រាក់បានទេ។ សូមដាក់ Bakong Account ID របស់អ្នកក្នុង <b>KHQR.account</b> ដើម្បីទទួលប្រាក់ពិត។</p>
+
+        <p class="kh-wait" id="waitNote" hidden><span class="spin" aria-hidden="true"></span>កំពុងរង់ចាំការបង់ប្រាក់...</p>
+        <div class="pay-actions">
+          <button class="btn" id="paidBtn" type="button">ខ្ញុំបានបង់រួចហើយ</button>
+          <button class="btn ghost" id="closeBtn" type="button">បោះបង់</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- វិក័យប័ត្រ -->
+    <div id="receiptView" hidden>
+      <div class="rc-head">
+        <div class="rc-icon" id="rcIcon" aria-hidden="true"></div>
+        <h2 id="rcTitle" tabindex="-1"></h2>
+        <span class="rc-status" id="rcStatus"></span>
+      </div>
+      <div class="rc-paper">
+        <div class="rc-brand"><span>Julian Topup</span><span class="rc-date" id="rcDate"></span></div>
+        <dl id="rcList"></dl>
+        <div class="rc-total"><span>សរុប</span><div class="rc-sum"><strong id="rcTotal"></strong><span id="rcRiel"></span></div></div>
+      </div>
+      <p class="rc-note" id="rcNote"></p>
+      <div class="rc-actions">
+        <a class="btn tg-link" href="https://t.me/julian_topup" target="_blank" rel="noopener">ផ្ញើភស្តុតាងតាម Telegram</a>
+        <div class="rc-two">
+          <button class="btn ghost" id="rcSave" type="button">ទាញយកវិក័យប័ត្រ</button>
+          <button class="btn ghost" id="rcCopy" type="button">ចម្លងវិក័យប័ត្រ</button>
+        </div>
+        <button class="btn ghost" id="rcClose" type="button">បិទ</button>
+        <p class="kh-hint2" id="rcNoteSave" role="status"></p>
+      </div>
+    </div>
+
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<!-- ការកំណត់ពី Admin: ផ្ទាំង Admin នឹងជំនួស null ខាងក្រោមដោយទិន្នន័យហ្គេម តម្លៃ និង KHQR (Config ពីផ្ទាំង Admin) -->
+<script type="application/json" id="jt-config">null</script>
+<script>try{var _x=new XMLHttpRequest();_x.open('GET','/shop-config.json',false);_x.send();if(_x.status===200){JSON.parse(_x.responseText);document.getElementById('jt-config').textContent=_x.responseText}}catch(e){}</script>
+<script>
+(function(){
+  /* ===== កែប្រែនៅទីនេះ / Edit here ===== */
+  var TELEGRAM = 'julian_topup';   // Telegram username របស់ហាង
+  var RATE = 4100;                 // អត្រា ១ ដុល្លារ = ប៉ុន្មានរៀល
+
+  // កញ្ចប់តាមក្រុមហ្គេម [ចំនួន, តម្លៃ $] — តម្លៃគំរូ សូមកែតាមតម្លៃពិត
+  var P = {
+    ml:   [[86,1.35],[172,2.65],[257,3.95],[344,5.20],[706,10.40],[2195,31.50]],
+    ff:   [[100,1.05],[310,3.10],[520,5.10],[1060,10.20],[2180,20.40],[5600,50.00]],
+    pubg: [[60,1.05],[325,5.20],[660,10.40],[1800,26.00],[3850,52.00],[8100,104.00]],
+    gi:   [[60,1.05],[330,5.20],[1090,15.60],[2240,31.20],[3880,52.00],[8080,104.00]],
+    rbx:  [[80,1.05],[400,5.20],[800,10.40],[1700,20.80],[4500,52.00],[10000,104.00]],
+    mc:   [[86,1.35],[172,2.65],[257,3.95],[344,5.20],[706,10.40],[2195,31.50]],
+    hok:  [[80,1.30],[240,3.85],[400,6.40],[800,12.80],[1200,19.20],[2400,38.40]]
+  };
+  // រូបភាពកញ្ចប់ (Item) ក្នុងតារាងតម្លៃ — ដាក់តំណរូប (URL) ក្នុង game តាមវិធីណាមួយ៖
+  //   packImg:  'https://.../diamond.png'          → រូបតែមួយប្រើគ្រប់កញ្ចប់
+  //   packImgs: ['a.png','b.png','c.png',...]      → រូបផ្សេងគ្នាតាមលំដាប់កញ្ចប់
+  //   ឬដាក់ជាធាតុទី ៣ ក្នុង pack៖ [86,1.35,'https://.../86.png']
+  // បើមិនដាក់ ប្រព័ន្ធនឹងប្រើរូបត្បូងគំរូដដែល។ ប្រើរូប PNG ផ្ទៃថ្លា ទំហំ ~128×128px
+  // idType: 'num' = Player ID ជាលេខ, 'text' = Username
+  var GAMES = [
+    {id:'roblox',  short:'Roblox',         name:'Roblox',          region:'GLOBAL',    mono:'RB', tint:'#B4232C', unit:'Robux',    unitKm:'Robux',       server:false, idType:'text', pop:2, packs:P.rbx},
+    {id:'mlbb-kh', short:'MLBB KH',        name:'Mobile Legends',  region:'CAMBODIA',  mono:'ML', tint:'#5B3FD9', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:true,  idType:'num',  pop:3, packs:P.ml},
+    {id:'mlbb-ph', short:'MLBB PH',        name:'Mobile Legends',  region:'PHILIPPINES',mono:'ML',tint:'#5B3FD9', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:true,  idType:'num',  pop:3, packs:P.ml},
+    {id:'mlbb-my', short:'MLBB MY',        name:'Mobile Legends',  region:'MALAYSIA',  mono:'ML', tint:'#5B3FD9', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:true,  idType:'num',  pop:3, packs:P.ml},
+    {id:'mlbb-id', short:'MLBB ID',        name:'Mobile Legends',  region:'INDONESIA', mono:'ML', tint:'#5B3FD9', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:true,  idType:'num',  pop:3, packs:P.ml},
+    {id:'ff-kh',   short:'Free Fire KH',   name:'Free Fire',       region:'CAMBODIA',  mono:'FF', tint:'#C2410C', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:false, idType:'num',  pop:2, packs:P.ff},
+    {id:'ff-tw',   short:'Free Fire TW',   name:'Free Fire',       region:'TW / CHINA',mono:'FF', tint:'#C2410C', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:false, idType:'num',  pop:2, packs:P.ff},
+    {id:'ff-id',   short:'Free Fire ID',   name:'Free Fire',       region:'INDONESIA', mono:'FF', tint:'#C2410C', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:false, idType:'num',  pop:2, packs:P.ff},
+    {id:'pubg',    short:'PUBG Mobile',    name:'PUBG Mobile',     region:'GLOBAL',    mono:'PU', tint:'#8A5A00', unit:'UC',       unitKm:'UC',          server:false, idType:'num',  pop:2, packs:P.pubg},
+    {id:'genshin', short:'Genshin Impact', name:'Genshin Impact',  region:'GLOBAL',    mono:'GI', tint:'#0B7A73', unit:'Genesis Crystals', unitKm:'គ្រីស្តាល់', server:true, idType:'num', pop:2, packs:P.gi},
+    {id:'magic',   short:'Magic Chess',    name:'Magic Chess',     region:'GLOBAL',    mono:'MC', tint:'#1F6FB2', unit:'Diamonds', unitKm:'គ្រាប់ពេជ្រ', server:true,  idType:'num',  pop:3, packs:P.mc},
+    {id:'hok',     short:'Honor of Kings', name:'Honor of Kings',  region:'GLOBAL',    mono:'HK', tint:'#A16207', unit:'Tokens',   unitKm:'Tokens',      server:false, idType:'num',  pop:2, packs:P.hok}
+  ];
+  // គណនីហ្គេមសម្រាប់លក់ — game គឺជា id ក្នុង GAMES ខាងលើ, usd = តម្លៃដុល្លារ
+  // images = ដាក់តំណរូបថតអេក្រង់ពិតរបស់គណនី (upload រូបទៅ hosting ណាមួយ ហើយចម្លងតំណមកដាក់ទីនេះ)
+  var ACCOUNTS = [
+    {game:'mlbb-kh', title:'Mobile Legends KH — Mythic Glory', specs:['Mythic Glory','120+ Skins','Epic ស្បែក'], usd:35, images:[]},
+    {game:'ff-kh',   title:'Free Fire KH — Grandmaster',       specs:['Grandmaster','Elite Pass ពេញ','Bundle កម្រ'], usd:22, images:[]},
+    {game:'pubg',    title:'PUBG Mobile — Conqueror',          specs:['Conqueror Season នេះ','Skin កាំភ្លើងកម្រ'], usd:45, images:[]},
+    {game:'genshin', title:'Genshin Impact — AR60',            specs:['AR 60','ចរិត ៥★ ១០+','សព្វាវុធ ៥★'], usd:60, images:[]}
+  ];
+  // ឆែកឈ្មោះគណនីពិត ត្រូវការ API/backend របស់អ្នក។ ដាក់ function(game, id, server) => Promise<string|null>
+  var CHECK_ID = null;
+
+  // បើមាន backend ឆែកការបង់ប្រាក់ ដាក់ function(order) => Promise<boolean> (true = បានបង់រួច)
+  // order = {code, usd, amount, currency, qr}  ទំព័រនឹងឆែករាល់ ៤ វិនាទី ហើយបង្ហាញវិក័យប័ត្រ "បង់ប្រាក់ជោគជ័យ" ដោយស្វ័យប្រវត្តិ
+  var CHECK_PAYMENT = null;
+
+  // ===== KHQR ===== ដាក់ព័ត៌មានគណនីទទួលប្រាក់របស់អ្នក
+  // សំខាន់៖ មុនបើកលក់ពិត សូមសាកល្បងស្កេន QR ជាមួយកម្មវិធីធនាគារ ហើយពិនិត្យចំនួនទឹកប្រាក់
+  var KHQR = {
+    account: '',            // Bakong Account ID ឧ. julian@aba (មើលក្នុង Bakong app > Profile)
+    name: 'Julian Topup',   // ឈ្មោះអ្នកលក់ អក្សរឡាតាំង មិនលើស 25 តួ
+    city: 'Phnom Penh',
+    currency: 'USD',        // 'USD' ឬ 'KHR'
+    expireMin: 15,          // QR ផុតកំណត់ក្នុងប៉ុន្មាននាទី
+    mcc: '5999',
+    merchantId: '', bank: ''// បំពេញតែប្រសិនបើជា Merchant account (ឧ. ABA PayWay)
+  };
+  // វិធីបង់ប្រាក់ (mono = អក្សរកាត់ក្នុងប្រអប់ logo, tint = ពណ៌ប្រអប់)
+  var PAYS = [
+    {name:'KHQR',    desc:'ស្កេនបង់ជាមួយកម្មវិធីធនាគារណាមួយ', mono:'KH',  tint:'#D0202B'},
+    {name:'ABA Pay', desc:'បង់តាមកម្មវិធី ABA Mobile',         mono:'ABA', tint:'#005E7B'},
+    {name:'Wing',    desc:'បង់តាមកម្មវិធី Wing',               mono:'W',   tint:'#2F7D32'},
+    {name:'ACLEDA',  desc:'បង់តាមកម្មវិធី ACLEDA Mobile',      mono:'AC',  tint:'#1F4E9C'}
+  ];
+  // ទិន្នន័យគំរូ — ជំនួសដោយបញ្ជាទិញពិតរបស់អ្នក
+  var ORDERS = [
+    ['Sok***','Mobile Legends','344 គ្រាប់ពេជ្រ','២ នាទីមុន'],
+    ['Dara***','Free Fire','520 គ្រាប់ពេជ្រ','៤ នាទីមុន'],
+    ['Vanna***','PUBG Mobile','660 UC','៧ នាទីមុន'],
+    ['Sreyneang***','Genshin Impact','330 គ្រីស្តាល់','១០ នាទីមុន'],
+    ['Rith***','Mobile Legends','86 គ្រាប់ពេជ្រ','១២ នាទីមុន'],
+    ['Malis***','Free Fire','1060 គ្រាប់ពេជ្រ','១៥ នាទីមុន']
+  ];
+  /* ===================================== */
+
+  /* ===== ការកំណត់ពី Admin (shop-config) ===== */
+  var SC = null;
+  try{
+    var scEl = document.getElementById('jt-config');
+    if(scEl && scEl.textContent.trim() && scEl.textContent.trim() !== 'null') SC = JSON.parse(scEl.textContent);
+  }catch(e){ SC = null; }
+  if(SC){
+    if(SC.telegram) TELEGRAM = SC.telegram;
+    if(SC.rate) RATE = +SC.rate || RATE;
+    if(SC.khqr) for(var kk in SC.khqr) KHQR[kk] = SC.khqr[kk];
+    if(SC.pays && SC.pays.length) PAYS = SC.pays;
+    if(Array.isArray(SC.games)) GAMES = SC.games;
+    if(Array.isArray(SC.accounts)) ACCOUNTS = SC.accounts;
+    if(SC.shop){
+      var bn = document.querySelector('.banner-name'), bs = document.querySelector('.banner-sub'), bb = document.getElementById('banner');
+      if(SC.shop.name && bn) bn.textContent = SC.shop.name;
+      if(SC.shop.sub && bs) bs.textContent = SC.shop.sub;
+      if(SC.shop.banner && bb){ bb.style.background = 'linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.05)),url("' + SC.shop.banner + '") center/cover'; var gm = document.getElementById('heroGem'); if(gm) gm.style.display = 'none'; }
+    }
+    var toKm = function(n){ return String(n).replace(/\d/g, function(d){ return '០១២៣៤៥៦៧៨៩'.charAt(+d); }); };
+    var ago = function(ms){
+      var m = Math.max(0, Math.round((Date.now() - ms) / 60000));
+      if(m < 1) return 'ទើបតែឥឡូវ';
+      if(m < 60) return toKm(m) + ' នាទីមុន';
+      if(m < 1440) return toKm(Math.round(m / 60)) + ' ម៉ោងមុន';
+      return toKm(Math.round(m / 1440)) + ' ថ្ងៃមុន';
+    };
+    ORDERS = (Array.isArray(SC.ticker) ? SC.ticker : []).map(function(t){
+      return Array.isArray(t) ? t : [t.n, t.g, t.p, ago(t.t)];
+    });
+  }
+
+  var BASE_TITLE = document.title;
+  var $ = function(s){return document.querySelector(s)};
+  var root = document.documentElement;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var state = {game:-1, pack:0, pay:0};
+  var fmt = function(n){return n.toLocaleString('en-US')};
+  var usd = function(n){return '$' + n.toFixed(2)};
+  var riel = function(n){return '៛' + fmt(Math.round(n * RATE / 100) * 100)};
+  var GEM = '<svg aria-hidden="true"><use href="#i-gem"/></svg>';
+  var homeEl = $('#homeView'), gameEl = $('#gameView');
+
+  document.querySelectorAll('.tg-link').forEach(function(a){a.href = 'https://t.me/' + TELEGRAM});
+
+  /* Theme */
+  try{var saved = localStorage.getItem('jt-theme'); if(saved) root.setAttribute('data-theme', saved);}catch(e){}
+  $('#themeBtn').addEventListener('click', function(){
+    var cur = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try{localStorage.setItem('jt-theme', next)}catch(e){}
+  });
+
+  /* Cover art (generated, no third-party artwork) */
+  function coverHTML(g){
+    if(g.logo) return '<span class="cover" style="--tint:'+g.tint+'" aria-hidden="true"><img src="'+esc(g.logo)+'" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></span>';
+    return '<span class="cover" style="--tint:'+g.tint+'" aria-hidden="true">' +
+      '<svg class="bg"><use href="#i-gem"/></svg><svg class="bg2"><use href="#i-gem"/></svg>' +
+      '<span class="mono">'+g.mono+'</span><span class="reg">'+g.region+'</span></span>';
+  }
+
+  /* Home: game catalog (no favourite hearts) */
+  function renderCards(){
+    $('#gameCards').innerHTML = GAMES.map(function(g,i){
+      return '<div class="gwrap"><button class="gcard" type="button" data-i="'+i+'" data-id="'+g.id+'" aria-label="'+g.name+' '+g.region+'">' +
+        coverHTML(g) + '<span class="gn">'+g.short+'</span><span class="go">TOPUP</span></button></div>';
+    }).join('');
+  }
+  function accHref(a){ return 'https://t.me/' + TELEGRAM + '?text=' + encodeURIComponent('ខ្ញុំចង់ទិញគណនី៖ ' + a.title); }
+  function renderAccounts(){
+    var el = $('#accCards'); if(!el) return;
+    el.innerHTML = ACCOUNTS.map(function(a,i){
+      var gi = findIdx(a.game), g = gi >= 0 ? GAMES[gi] : {tint:'#3355F5', mono:'GM', region:''};
+      return '<div class="acard">' +
+        '<button class="cover" type="button" data-i="' + i + '" style="--tint:' + g.tint + '" aria-label="មើលរូបភាព ' + a.title + '">' +
+        '<svg class="bg" aria-hidden="true"><use href="#i-gem"/></svg><svg class="bg2" aria-hidden="true"><use href="#i-gem"/></svg>' +
+        '<span class="mono">' + g.mono + '</span><span class="reg">' + g.region + '</span>' +
+        '<span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>' +
+        '<div class="ac-body"><span class="ac-title">' + a.title + '</span>' +
+        '<div class="ac-specs">' + a.specs.map(function(s){return '<span>'+s+'</span>'}).join('') + '</div>' +
+        '<div class="ac-price"><strong>' + usd(a.usd) + '</strong>' +
+        '<button class="btn small" type="button" data-buy="' + i + '">ទិញឥឡូវ</button></div>' +
+        '</div></div>';
+    }).join('');
+  }
+
+  /* Account photo viewer */
+  var phDlg = $('#photoDialog'), phState = {a:null, idx:0};
+  function phRenderMain(){
+    var a = phState.a, imgs = a.images || [];
+    var gi = findIdx(a.game), g = gi >= 0 ? GAMES[gi] : {tint:'#3355F5', mono:'GM', region:''};
+    $('#phMain').innerHTML = imgs.length
+      ? '<img src="' + imgs[phState.idx] + '" alt="' + a.title + '">'
+      : coverHTML(g);
+    document.querySelectorAll('#phThumbs button').forEach(function(b,i){ b.classList.toggle('active', i === phState.idx); });
+  }
+  function openPhotos(i){
+    var a = ACCOUNTS[i]; if(!a) return;
+    phState = {a:a, idx:0};
+    $('#phTitle').textContent = a.title;
+    $('#phSpecs').innerHTML = a.specs.map(function(s){return '<span>'+s+'</span>'}).join('');
+    $('#phPrice').textContent = usd(a.usd);
+    $('#phBuy').setAttribute('data-buy', String(i));
+    var imgs = a.images || [];
+    $('#phThumbs').innerHTML = imgs.length > 1 ? imgs.map(function(u,i2){
+      return '<button type="button" data-i="' + i2 + '"><img src="' + u + '" alt=""></button>';
+    }).join('') : (imgs.length ? '' : '<span class="hint">មិនទាន់មានរូបថតអេក្រង់ពិត — សូមទាក់ទងសើម្បីមើលបន្ថែម។</span>');
+    phRenderMain();
+    if(typeof phDlg.showModal === 'function') phDlg.showModal(); else phDlg.setAttribute('open','');
+    $('#phTitle').focus({preventScroll:true});
+  }
+  $('#accCards').addEventListener('click', function(e){
+    var b = e.target.closest('.cover[data-i]'); if(!b) return;
+    openPhotos(+b.getAttribute('data-i'));
+  });
+  $('#phThumbs').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-i]'); if(!b) return;
+    phState.idx = +b.getAttribute('data-i'); phRenderMain();
+  });
+  function closePhotos(){ if(phDlg.close) phDlg.close(); else phDlg.removeAttribute('open'); }
+  $('#phClose').addEventListener('click', closePhotos);
+
+  /* ===== ទិញគណនី: ព័ត៌មានទំនាក់ទំនង → QR ===== */
+  var buyDlg = $('#buyDialog'), buyIdx = -1;
+  function openBuy(i){
+    var a = ACCOUNTS[i]; if(!a) return;
+    buyIdx = i;
+    if(phDlg.open) closePhotos();
+    $('#buyItem').innerHTML = '<b>' + esc(a.title) + '</b>' + esc(a.specs.join(' · '));
+    $('#buyPrice').textContent = usd(a.usd);
+    ['buyName','buyPhone'].forEach(function(id){ $('#'+id).removeAttribute('aria-invalid'); });
+    $('#buyNameErr').textContent = ''; $('#buyPhoneErr').textContent = '';
+    if(typeof buyDlg.showModal === 'function') buyDlg.showModal(); else buyDlg.setAttribute('open','');
+    $('#buyTitle').focus({preventScroll:true});
+  }
+  function closeBuy(){ if(buyDlg.close) buyDlg.close(); else buyDlg.removeAttribute('open'); }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-buy]'); if(!b) return;
+    openBuy(+b.getAttribute('data-buy'));
+  });
+  $('#buyClose').addEventListener('click', closeBuy);
+  buyDlg.addEventListener('click', function(e){ if(e.target === buyDlg) closeBuy(); });
+  $('#buyPhone').addEventListener('input', function(e){ e.target.value = e.target.value.replace(/[^\d+ ]/g,''); });
+  $('#buyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var a = ACCOUNTS[buyIdx]; if(!a) return;
+    var name = $('#buyName').value.trim(), phone = $('#buyPhone').value.trim(),
+        tg = $('#buyTg').value.trim(), note = $('#buyNote').value.trim(), first = null;
+    $('#buyNameErr').textContent = ''; $('#buyPhoneErr').textContent = '';
+    $('#buyName').removeAttribute('aria-invalid'); $('#buyPhone').removeAttribute('aria-invalid');
+    if(name.length < 2){ $('#buyNameErr').textContent = 'សូមបញ្ចូលឈ្មោះរបស់អ្នក'; $('#buyName').setAttribute('aria-invalid','true'); first = $('#buyName'); }
+    if(!/^\+?\d[\d ]{7,14}$/.test(phone)){ $('#buyPhoneErr').textContent = 'សូមបញ្ចូលលេខទូរស័ព្ទឱ្យត្រឹមត្រូវ'; $('#buyPhone').setAttribute('aria-invalid','true'); first = first || $('#buyPhone'); }
+    if(first){ first.focus(); return; }
+    var rows = [
+      ['លេខបញ្ជាទិញ', ''],
+      ['គណនី', a.title],
+      ['ឈ្មោះអ្នកទិញ', name],
+      ['លេខទូរស័ព្ទ', phone]
+    ];
+    if(tg) rows.push(['Telegram', tg]);
+    if(note) rows.push(['កំណត់ចំណាំ', note]);
+    rows.push(['វិធីបង់', 'KHQR']);
+    closeBuy();
+    startPayment({usd:a.usd, kind:'account', rows:rows, itemText:a.title + ' · ' + a.specs.join(' · ')});
+  });
+  phDlg.addEventListener('click', function(e){ if(e.target === phDlg) closePhotos(); });
+  function renderTicker(){
+    var set = '<div class="set">' + ORDERS.map(function(o){
+      return '<span class="tk">'+GEM+'<b>'+o[0]+'</b> បានទិញ '+o[2]+' ក្នុង '+o[1]+' <i>'+o[3]+'</i></span>';
+    }).join('') + '</div>';
+    $('#track').innerHTML = set + set.replace('<div class="set">','<div class="set" aria-hidden="true">');
+  }
+
+  /* Game page: price table */
+  function gemArt(i, img){
+    if(img) return '<span class="pi"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{textContent:\'\'}))"></span>';
+    var n = i < 2 ? 1 : (i < 4 ? 2 : 3);
+    var u = function(c,x,y,w,h){return '<use class="'+c+'" href="#i-gem" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'"/>'};
+    var body = n === 1 ? u('a',10,11,24,22)
+      : n === 2 ? u('a',4,15,22,20) + u('b',18,8,22,20)
+      : u('a',3,19,20,18) + u('b',21,19,20,18) + u('a',11,6,22,20);
+    return '<span class="pi" aria-hidden="true"><svg viewBox="0 0 44 44">'+body+'</svg></span>';
+  }
+  function renderPacks(){
+    var g = GAMES[state.game];
+    $('#packList').innerHTML = g.packs.map(function(p,i){
+      return '<label class="opt"><input type="radio" name="pack" value="'+i+'"'+(i===state.pack?' checked':'')+'>' +
+        '<span class="tile pack">'+gemArt(i, p[2] || (g.packImgs && g.packImgs[i]) || g.packImg)+'<span class="pt"><span class="amt">'+fmt(p[0])+'<small>'+g.unitKm+'</small></span>' +
+        '<span class="price">'+usd(p[1])+'</span><span class="riel">'+riel(p[1])+'</span></span></span>' +
+        (i===g.pop?'<span class="tag">ពេញនិយម</span>':'') + '</label>';
+    }).join('');
+  }
+  function renderPays(){
+    $('#payList').innerHTML = PAYS.map(function(p,i){
+      return '<label class="opt"><input type="radio" name="pay" value="'+i+'"'+(i===state.pay?' checked':'')+'>' +
+        '<span class="tile pay"><span class="pl" style="--pc:'+p.tint+'" aria-hidden="true">'+p.mono+'</span>' +
+        '<span class="pt"><span class="pn">'+p.name+'</span><span class="pd">'+p.desc+'</span></span>' +
+        '<span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></span></label>';
+    }).join('');
+  }
+  function renderTotal(){
+    var g = GAMES[state.game], p = g.packs[state.pack];
+    $('#sumPack').textContent = fmt(p[0]) + ' ' + g.unitKm;
+    $('#total').textContent = usd(p[1]);
+    $('#totalRiel').textContent = '≈ ' + riel(p[1]);
+  }
+  function renderGamePage(){
+    var g = GAMES[state.game], isText = g.idType === 'text';
+    $('#gpCover').innerHTML = coverHTML(g);
+    $('#gTitle').textContent = g.name;
+    $('#gRegion').textContent = g.region;
+    $('#gBanner').style.setProperty('--tint', g.tint);
+    $('#pidLabel').textContent = isText ? 'Username' : 'Player ID';
+    var pid = $('#pid');
+    pid.value = ''; pid.removeAttribute('aria-invalid');
+    pid.setAttribute('inputmode', isText ? 'text' : 'numeric');
+    pid.placeholder = isText ? 'Username ក្នុង Roblox' : 'ឧ. 123456789';
+    $('#sid').value = ''; $('#sid').removeAttribute('aria-invalid');
+    $('#sidField').hidden = !g.server;
+    $('#fields').classList.toggle('solo', !g.server);
+    $('#checkResult').hidden = true; $('#checkBtn').classList.remove('on');
+    $('#pidErr').textContent = ''; $('#sidErr').textContent = '';
+    $('#idHint').textContent = isText ? 'ប្រើ Username មិនមែនឈ្មោះបង្ហាញទេ។' : 'រកឃើញនៅក្នុងទំព័រប្រវត្តិរូបរបស់អ្នកក្នុងហ្គេម។';
+    renderPacks(); renderPays(); renderTotal();
+  }
+
+  /* Views */
+  function findIdx(id){for(var i=0;i<GAMES.length;i++) if(GAMES[i].id===id) return i; return -1}
+  function showGame(i, fromRoute){
+    state.game = i; state.pack = GAMES[i].pop; state.pay = 0;
+    renderGamePage();
+    homeEl.hidden = true; gameEl.hidden = false;
+    document.title = GAMES[i].name + ' ' + GAMES[i].region + ' | Julian Topup';
+    window.scrollTo(0,0);
+    if(!fromRoute){ try{ location.hash = '#/game/' + GAMES[i].id; }catch(e){} }
+    $('#gTitle').focus({preventScroll:true});
+  }
+  function showHome(fromRoute){
+    var lastId = state.game >= 0 ? GAMES[state.game].id : null;
+    gameEl.hidden = true; homeEl.hidden = false;
+    document.title = BASE_TITLE;
+    if(!fromRoute){ try{ if(location.hash) history.replaceState(null,'',location.pathname + location.search); }catch(e){} }
+    state.game = -1;
+    return lastId;
+  }
+  function route(){
+    var h = ''; try{ h = location.hash || ''; }catch(e){}
+    var m = /^#\/game\/([\w-]+)$/.exec(h);
+    if(m){
+      var i = findIdx(m[1]);
+      if(i >= 0){ if(i !== state.game || gameEl.hidden) showGame(i, true); return; }
+    }
+    if(!gameEl.hidden){
+      var id = showHome(true); focusCard(id);
+    }
+  }
+  function focusCard(id){
+    var b = id && document.querySelector('.gcard[data-id="'+id+'"]');
+    if(b){ b.scrollIntoView({block:'center'}); b.focus({preventScroll:true}); }
+  }
+  window.addEventListener('hashchange', route);
+
+  $('#gameCards').addEventListener('click', function(e){
+    var b = e.target.closest('.gcard'); if(!b) return;
+    showGame(+b.dataset.i, false);
+  });
+  /* In-page links (works from both views). Clicking the logo returns to the home page. */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]'); if(!a) return;
+    var id = a.getAttribute('href').slice(1); if(!id) return;
+    var t = document.getElementById(id); if(!t) return;
+    e.preventDefault();
+    var wasGame = !gameEl.hidden;
+    if(wasGame) showHome(false);
+    if(a.classList.contains('brand')){
+      window.scrollTo({top:0, behavior: (reduced || wasGame) ? 'auto' : 'smooth'});
+    } else {
+      t.scrollIntoView({behavior: reduced ? 'auto' : 'smooth'});
+    }
+  });
+
+  /* Form */
+  var form = $('#orderForm');
+  form.addEventListener('change', function(e){
+    var t = e.target;
+    if(t.name === 'pack'){ state.pack = +t.value; renderTotal(); }
+    else if(t.name === 'pay'){ state.pay = +t.value; }
+  });
+  $('#pid').addEventListener('input', function(e){
+    if(GAMES[state.game] && GAMES[state.game].idType !== 'text') e.target.value = e.target.value.replace(/\D/g,'');
+    e.target.removeAttribute('aria-invalid'); $('#pidErr').textContent = ''; $('#checkResult').hidden = true; $('#checkBtn').classList.remove('on');
+  });
+  $('#sid').addEventListener('input', function(e){
+    e.target.value = e.target.value.replace(/\D/g,'');
+    e.target.removeAttribute('aria-invalid'); $('#sidErr').textContent = ''; $('#checkResult').hidden = true; $('#checkBtn').classList.remove('on');
+  });
+
+  function esc(t){return String(t).replace(/[&<>"]/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]})}
+  function validateAccount(){
+    var g = GAMES[state.game], isText = g.idType === 'text';
+    var pid = $('#pid').value.trim(), sid = $('#sid').value.trim(), first = null;
+    $('#pid').removeAttribute('aria-invalid'); $('#sid').removeAttribute('aria-invalid');
+    $('#pidErr').textContent = ''; $('#sidErr').textContent = '';
+    var okId = isText ? /^[A-Za-z0-9_]{3,20}$/.test(pid) : /^\d{5,14}$/.test(pid);
+    if(!okId){
+      $('#pidErr').textContent = isText ? 'សូមបញ្ចូល Username 3 ដល់ 20 តួ (អក្សរ លេខ ឬ _)' : 'សូមបញ្ចូល Player ID ជាលេខ 5 ដល់ 14 ខ្ទង់';
+      $('#pid').setAttribute('aria-invalid','true'); first = $('#pid');
+    }
+    if(g.server && !/^\d{3,6}$/.test(sid)){
+      $('#sidErr').textContent = 'សូមបញ្ចូល Server ID ជាលេខ 3 ដល់ 6 ខ្ទង់';
+      $('#sid').setAttribute('aria-invalid','true'); first = first || $('#sid');
+    }
+    if(first){ first.focus(); return null; }
+    return {pid:pid, sid:sid};
+  }
+
+  /* ឆែក ID */
+  $('#checkBtn').addEventListener('click', function(){
+    var box = $('#checkResult'), acct = validateAccount();
+    $('#checkBtn').classList.add('on');
+    if(!acct){ box.hidden = true; return; }
+    var g = GAMES[state.game];
+    var idText = (g.idType === 'text' ? 'Username: ' : 'Player ID: ') + acct.pid + (g.server ? ' (Server ' + acct.sid + ')' : '');
+    function show(nick){
+      box.className = 'check-result ok';
+      box.innerHTML = '<b>' + (nick ? 'ឈ្មោះគណនី៖ ' + esc(nick) : 'ទម្រង់ ID ត្រឹមត្រូវ') + '</b>' + esc(idText) +
+        '<br>សូមពិនិត្យឱ្យច្បាស់ថា ID នេះជាគណនីរបស់អ្នក មុនបង់ប្រាក់។';
+      box.hidden = false;
+    }
+    if(typeof CHECK_ID === 'function'){
+      box.className = 'check-result'; box.textContent = 'កំពុងឆែក...'; box.hidden = false;
+      CHECK_ID(g, acct.pid, acct.sid).then(function(n){
+        if(n) show(n); else { box.className = 'check-result'; box.textContent = 'រកមិនឃើញគណនីនេះទេ។ សូមពិនិត្យ ID ម្តងទៀត។'; }
+      }, function(){ show(null); });
+    } else { show(null); }
+  });
+
+  /* ===== KHQR payload (EMV TLV + CRC16) ===== */
+  function tlv(tag, val){ val = String(val); return tag + ('0' + val.length).slice(-2) + val; }
+  function crc16(str){
+    var crc = 0xFFFF;
+    for(var i = 0; i < str.length; i++){
+      crc ^= str.charCodeAt(i) << 8;
+      for(var j = 0; j < 8; j++){ crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) : (crc << 1); crc &= 0xFFFF; }
+    }
+    return ('0000' + crc.toString(16).toUpperCase()).slice(-4);
+  }
+  function ascii(t, max){ return String(t).replace(/[^\x20-\x7E]/g,'').slice(0, max); }
+  function buildKHQR(o){
+    var isKHR = o.currency === 'KHR', exp = o.now + o.expireMin * 60000;
+    var acct = (o.merchantId && o.bank)
+      ? tlv('30', tlv('00', o.account) + tlv('01', o.merchantId) + tlv('02', o.bank))
+      : tlv('29', tlv('00', o.account));
+    var amt = isKHR ? String(Math.round(o.amount)) : o.amount.toFixed(2);
+    var q = tlv('00','01') + tlv('01','12') + acct + tlv('52', o.mcc || '5999') + tlv('53', isKHR ? '116' : '840') +
+      tlv('54', amt) + tlv('58','KH') + tlv('59', ascii(o.name, 25)) + tlv('60', ascii(o.city, 15));
+    if(o.bill) q += tlv('62', tlv('01', ascii(o.bill, 25)));
+    q += tlv('99', tlv('00', String(o.now)) + tlv('01', String(exp)));
+    q += '6304';
+    return q + crc16(q);
+  }
+
+  /* ===== QR image ===== */
+  var qrLoading = null;
+  function ensureQR(cb){
+    if(typeof qrcode === 'function'){ cb(true); return; }
+    if(!qrLoading){
+      qrLoading = new Promise(function(res){
+        var sc = document.createElement('script');
+        sc.src = 'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js';
+        sc.onload = function(){ res(typeof qrcode === 'function'); };
+        sc.onerror = function(){ res(false); };
+        document.head.appendChild(sc);
+      });
+    }
+    qrLoading.then(cb);
+  }
+  function qrMatrix(text){
+    var qr = qrcode(0, 'Q'); qr.addData(text); qr.make();
+    var n = qr.getModuleCount(), m = [], r, k;
+    for(r = 0; r < n; r++){ m.push([]); for(k = 0; k < n; k++) m[r].push(qr.isDark(r, k)); }
+    return m;
+  }
+  function qrCanvas(m, cell){
+    var n = m.length, size = (n + 8) * cell, cv = document.createElement('canvas');
+    cv.width = cv.height = size;
+    var x = cv.getContext('2d');
+    x.fillStyle = '#fff'; x.fillRect(0, 0, size, size);
+    x.fillStyle = '#000';
+    for(var r = 0; r < n; r++) for(var k = 0; k < n; k++) if(m[r][k]) x.fillRect((k + 4) * cell, (r + 4) * cell, cell, cell);
+    /* ចំណុចសម្គាល់ហាងនៅកណ្តាល (ស្រូបយកតិចជាង 3% នៃផ្ទៃ QR) */
+    var mid = size / 2, R = size * 0.078;
+    x.fillStyle = '#fff'; x.beginPath(); x.arc(mid, mid, R, 0, Math.PI * 2); x.fill();
+    x.fillStyle = '#E1232E'; x.beginPath(); x.arc(mid, mid, R * 0.82, 0, Math.PI * 2); x.fill();
+    var gw = R * 1.0, gh = gw * 22 / 24;
+    x.save(); x.translate(mid - gw / 2, mid - gh / 2); x.scale(gw / 24, gh / 22);
+    x.fillStyle = '#fff'; x.fill(new Path2D('M7 1h10l6 7-11 13L1 8z')); x.restore();
+    return cv;
+  }
+  function loadFont(){
+    try{ if(document.fonts && document.fonts.load) return document.fonts.load('700 30px "Kantumruy Pro"').catch(function(){}); }catch(e){}
+    return Promise.resolve();
+  }
+  var FONT = '"Kantumruy Pro","Noto Sans Khmer",system-ui,sans-serif';
+  function toBlob(cv){ return new Promise(function(res){ cv.toBlob(res, 'image/png'); }); }
+
+  /* រូប QR ពេញទំព័រ សម្រាប់ទាញយក ហើយបញ្ចូលក្នុងកម្មវិធីធនាគារ */
+  function qrCardBlob(o){
+    return loadFont().then(function(){
+      var W = 600, H = 1000, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+      var x = cv.getContext('2d');
+      x.fillStyle = '#fff'; x.fillRect(0, 0, W, H);
+      x.fillStyle = '#E1232E'; x.fillRect(0, 0, W, 150);
+      x.beginPath(); x.moveTo(W - 68, 150); x.lineTo(W, 150); x.lineTo(W, 218); x.closePath(); x.fill();
+      x.fillStyle = '#fff'; x.textAlign = 'center'; x.font = '700 64px ' + FONT; x.fillText('KHQR', W / 2, 98);
+      x.textAlign = 'left'; x.fillStyle = '#12153A';
+      x.font = '500 28px ' + FONT; x.fillText(KHQR.name.toUpperCase(), 60, 236);
+      var amt = o.currency === 'KHR' ? fmt(o.amount) : o.amount.toFixed(2);
+      x.font = '700 84px ' + FONT; x.fillText(amt, 60, 326);
+      var aw = x.measureText(amt).width;
+      x.font = '500 30px ' + FONT; x.fillText(o.currency, 60 + aw + 16, 326);
+      x.setLineDash([14, 12]); x.strokeStyle = '#C9CDE6'; x.lineWidth = 3;
+      x.beginPath(); x.moveTo(0, 372); x.lineTo(W, 372); x.stroke(); x.setLineDash([]);
+      var q = qrCanvas(qrMatrix(o.qr), 7);
+      x.drawImage(q, Math.round((W - q.width) / 2), 396);
+      x.fillStyle = '#12153A'; x.textAlign = 'center';
+      x.font = '700 32px ' + FONT; x.fillText('Scan to Pay', W / 2, 396 + q.height + 44);
+      x.fillStyle = '#6B7099'; x.font = '500 26px ' + FONT; x.fillText(o.code, W / 2, 396 + q.height + 84);
+      return toBlob(cv);
+    });
+  }
+
+  /* វិក័យប័ត្រជារូបភាព */
+  function receiptBlob(o){
+    return loadFont().then(function(){
+      var paid = o.status === 'paid', W = 720, pad = 48, rowH = 54;
+      var H = 470 + o.rows.length * rowH + 190;
+      var cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+      var x = cv.getContext('2d'), col = paid ? '#16A34A' : '#D97706';
+      x.fillStyle = '#fff'; x.fillRect(0, 0, W, H);
+      x.fillStyle = col; x.fillRect(0, 0, W, 14);
+      x.beginPath(); x.arc(W / 2, 100, 42, 0, Math.PI * 2); x.fill();
+      x.strokeStyle = '#fff'; x.lineWidth = 7; x.lineCap = 'round'; x.lineJoin = 'round'; x.beginPath();
+      if(paid){ x.moveTo(W / 2 - 18, 100); x.lineTo(W / 2 - 4, 114); x.lineTo(W / 2 + 20, 86); }
+      else { x.arc(W / 2, 100, 20, 0, Math.PI * 2); x.moveTo(W / 2, 88); x.lineTo(W / 2, 101); x.lineTo(W / 2 + 10, 107); }
+      x.stroke();
+      x.textAlign = 'center'; x.fillStyle = '#12153A'; x.font = '700 38px ' + FONT;
+      x.fillText(o.title, W / 2, 190);
+      x.fillStyle = col; x.font = '700 26px ' + FONT; x.fillText(o.statusText, W / 2, 236);
+      x.textAlign = 'left'; x.fillStyle = '#12153A'; x.font = '700 30px ' + FONT; x.fillText('Julian Topup', pad, 320);
+      x.textAlign = 'right'; x.fillStyle = '#6B7099'; x.font = '400 24px ' + FONT; x.fillText(o.when, W - pad, 320);
+      x.setLineDash([12, 10]); x.strokeStyle = '#C9CDE6'; x.lineWidth = 3;
+      x.beginPath(); x.moveTo(pad, 348); x.lineTo(W - pad, 348); x.stroke();
+      var y = 348 + 46;
+      o.rows.forEach(function(r){
+        x.textAlign = 'left'; x.fillStyle = '#6B7099'; x.font = '400 26px ' + FONT; x.fillText(r[0], pad, y);
+        x.textAlign = 'right'; x.fillStyle = '#12153A'; x.font = '700 26px ' + FONT; x.fillText(r[1], W - pad, y);
+        y += rowH;
+      });
+      x.beginPath(); x.moveTo(pad, y - 20); x.lineTo(W - pad, y - 20); x.stroke(); x.setLineDash([]);
+      x.textAlign = 'left'; x.fillStyle = '#12153A'; x.font = '700 30px ' + FONT; x.fillText('សរុប', pad, y + 40);
+      x.textAlign = 'right'; x.font = '700 54px ' + FONT; x.fillText(o.usdText, W - pad, y + 46);
+      x.fillStyle = '#6B7099'; x.font = '400 24px ' + FONT; x.fillText(o.rielText, W - pad, y + 84);
+      x.textAlign = 'center'; x.font = '400 22px ' + FONT; x.fillText('Julian Topup', W / 2, H - 40);
+      return toBlob(cv);
+    });
+  }
+
+  /* ទាញយកឯកសារ: ប្រើ capability "downloads" របស់ Artifact បើមាន បើអត់ប្រើ share sheet ឬតំណទាញយក */
+  var dlCap = null;
+  try{ if(window.claude && window.claude.use) window.claude.use('downloads').then(function(d){ dlCap = d; }, function(){}); }catch(e){}
+  function saveBlob(filename, blob){
+    if(dlCap){
+      return dlCap.save({filename: filename, data: blob}).then(function(){ return 'saved'; }, function(err){
+        return (err && err.code === 'declined') ? 'declined' : fallbackSave(filename, blob);
+      });
+    }
+    return fallbackSave(filename, blob);
+  }
+  function fallbackSave(filename, blob){
+    return new Promise(function(res){
+      try{
+        var f = new File([blob], filename, {type: blob.type});
+        if(navigator.canShare && navigator.canShare({files: [f]})){
+          navigator.share({files: [f]}).then(function(){ res('saved'); }, function(){ res('declined'); });
+          return;
+        }
+      }catch(e){}
+      try{
+        var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        res('attempted');
+      }catch(e){ res('failed'); }
+    });
+  }
+  function saveNote(el, result){
+    el.textContent = result === 'saved' ? 'បានរក្សាទុករួចហើយ។'
+      : result === 'declined' ? ''
+      : 'បើមិនអាចទាញយកបាន សូមចុចរូបឱ្យយូរ ឬថតអេក្រង់។';
+  }
+
+  /* ===== ស្កេនបង់ប្រាក់ ===== */
+  var currentOrder = null, qrTimerId = null, pollId = null, qrEnd = 0;
+  function stopTimers(){ clearInterval(qrTimerId); clearInterval(pollId); }
+  function tickQR(){
+    var left = qrEnd - Date.now();
+    if(left <= 0){
+      stopTimers();
+      $('#qrTimer').textContent = ''; $('#waitNote').hidden = true;
+      $('#qrBox').classList.add('expired'); $('#qrExpired').hidden = false;
+      return;
+    }
+    var m = Math.floor(left / 60000), sec = Math.floor(left % 60000 / 1000);
+    $('#qrTimer').textContent = 'QR ផុតកំណត់ក្នុង ' + m + ':' + ('0' + sec).slice(-2);
+  }
+  function startPolling(){
+    clearInterval(pollId);
+    if(typeof CHECK_PAYMENT !== 'function'){ $('#waitNote').hidden = true; return; }
+    $('#waitNote').hidden = false;
+    var busy = false;
+    pollId = setInterval(function(){
+      if(busy || !currentOrder || currentOrder.done) return;
+      busy = true;
+      Promise.resolve(CHECK_PAYMENT(currentOrder)).then(function(ok){ busy = false; if(ok) showReceipt('paid'); }, function(){ busy = false; });
+    }, 4000);
+  }
+  function qrFail(){
+    $('#qrImg').innerHTML = '<p class="qr-fail">មិនអាចបង្កើត QR បានទេ។ សូមផ្ញើលេខបញ្ជាទិញមក Telegram ដើម្បីទទួល QR។</p>';
+  }
+  function renderQR(){
+    if(!currentOrder) return;
+    var k = KHQR, isKHR = k.currency === 'KHR', now = Date.now();
+    var amount = isKHR ? Math.round(currentOrder.usd * RATE / 100) * 100 : currentOrder.usd;
+    var payload = buildKHQR({
+      account: k.account || 'your_account@bank', name: k.name, city: k.city, currency: k.currency, amount: amount,
+      bill: currentOrder.code, now: now, expireMin: k.expireMin, mcc: k.mcc, merchantId: k.merchantId, bank: k.bank
+    });
+    currentOrder.qr = payload; currentOrder.amount = amount; currentOrder.currency = k.currency;
+    $('#qrName').textContent = String(k.name).toUpperCase();
+    $('#qrAmount').textContent = isKHR ? fmt(amount) : amount.toFixed(2);
+    $('#qrCur').textContent = k.currency;
+    $('#demoNote').hidden = !!k.account;
+    $('#dlNote').textContent = '';
+    stopTimers();
+    $('#qrBox').classList.remove('expired'); $('#qrExpired').hidden = true; $('#qrTimer').textContent = '';
+    $('#qrImg').innerHTML = '';
+    ensureQR(function(ok){
+      if(!ok){ qrFail(); return; }
+      try{
+        var img = new Image(); img.alt = 'KHQR'; img.src = qrCanvas(qrMatrix(payload), 8).toDataURL('image/png');
+        $('#qrImg').innerHTML = ''; $('#qrImg').appendChild(img);
+      }catch(e){ qrFail(); return; }
+      qrEnd = now + k.expireMin * 60000;
+      tickQR(); qrTimerId = setInterval(tickQR, 1000);
+      startPolling();
+    });
+  }
+  $('#qrRenew').addEventListener('click', renderQR);
+  $('#qrDownload').addEventListener('click', function(){
+    if(!currentOrder || !currentOrder.qr) return;
+    qrCardBlob(currentOrder).then(function(b){ return saveBlob('KHQR-' + currentOrder.code + '.png', b); })
+      .then(function(r){ saveNote($('#dlNote'), r); });
+  });
+
+  /* ===== វិក័យប័ត្រ ===== */
+  function receiptText(o){
+    return 'វិក័យប័ត្រ Julian Topup\nស្ថានភាព: ' + o.statusText + '\nពេលវេលា: ' + o.when + '\n' +
+      o.rows.map(function(r){ return r[0] + ': ' + r[1]; }).join('\n') + '\nសរុប: ' + o.usdText + ' (' + o.rielText + ')';
+  }
+  function showReceipt(status){
+    if(!currentOrder) return;
+    stopTimers();
+    var o = currentOrder, paid = status === 'paid';
+    o.done = true; o.status = status;
+    o.title = paid ? 'បង់ប្រាក់ជោគជ័យ' : 'បានទទួលបញ្ជាទិញ';
+    o.statusText = paid ? 'បានផ្ទៀងផ្ទាត់ការបង់ប្រាក់' : 'រង់ចាំផ្ទៀងផ្ទាត់ការបង់ប្រាក់';
+    o.when = new Date().toLocaleString('en-GB', {day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit', hour12:false}).replace(',', '');
+    $('#payView').hidden = true; $('#receiptView').hidden = false;
+    var icon = $('#rcIcon');
+    icon.className = 'rc-icon ' + (paid ? 'paid' : 'pending');
+    icon.innerHTML = paid
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg>';
+    $('#rcTitle').textContent = o.title;
+    var st = $('#rcStatus'); st.textContent = o.statusText; st.className = 'rc-status ' + (paid ? 'paid' : 'pending');
+    $('#rcDate').textContent = o.when;
+    $('#rcList').innerHTML = o.rows.map(function(r){ return '<dt>' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('');
+    $('#rcTotal').textContent = o.usdText; $('#rcRiel').textContent = o.rielText;
+    $('#rcNote').textContent = paid
+      ? (o.kind === 'account'
+          ? 'ការបង់ប្រាក់របស់អ្នកត្រូវបានផ្ទៀងផ្ទាត់។ យើងនឹងទាក់ទងអ្នកតាមលេខទូរស័ព្ទ ឬ Telegram ដើម្បីបញ្ជូនគណនី។ សូមរក្សាទុកវិក័យប័ត្រនេះ។'
+          : 'ការបង់ប្រាក់របស់អ្នកត្រូវបានផ្ទៀងផ្ទាត់។ គ្រាប់ពេជ្រនឹងចូលគណនីក្នុងរយៈពេលខ្លីៗ។ សូមរក្សាទុកវិក័យប័ត្រនេះ។')
+      : 'យើងកំពុងផ្ទៀងផ្ទាត់ការបង់ប្រាក់របស់អ្នក។ សូមផ្ញើរូបថតការទូទាត់ និងលេខបញ្ជាទិញនេះមក Telegram ដើម្បីទទួលបានលឿនជាងមុន។';
+    var tgBtn = $('#receiptView .tg-link');
+    if(tgBtn) tgBtn.href = 'https://t.me/' + TELEGRAM + '?text=' + encodeURIComponent(receiptText(o));
+    $('#rcNoteSave').textContent = ''; $('#rcCopy').textContent = 'ចម្លងវិក័យប័ត្រ';
+    $('#rcTitle').focus({preventScroll:true}); dlg.scrollTop = 0;
+  }
+
+  var dlg = $('#orderDialog');
+  dlg.addEventListener('close', function(){ stopTimers(); });
+  $('#paidBtn').addEventListener('click', function(){
+    if(currentOrder && !currentOrder.sent){
+      currentOrder.sent = true;
+      try{ fetch('/api/notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({usd:currentOrder.usd,rows:currentOrder.rows})}); }catch(e){}
+    }
+    showReceipt('pending');
+  });
+  function closeSheet(){ if(dlg.close) dlg.close(); else dlg.removeAttribute('open'); }
+  $('#closeBtn').addEventListener('click', closeSheet);
+  $('#rcClose').addEventListener('click', closeSheet);
+  dlg.addEventListener('click', function(e){ if(e.target === dlg) closeSheet(); });
+  $('#rcSave').addEventListener('click', function(){
+    if(!currentOrder) return;
+    receiptBlob(currentOrder).then(function(b){ return saveBlob('Receipt-' + currentOrder.code + '.png', b); })
+      .then(function(r){ saveNote($('#rcNoteSave'), r); });
+  });
+  $('#rcCopy').addEventListener('click', function(){
+    var btn = this, text = receiptText(currentOrder);
+    function done(){ btn.textContent = 'បានចម្លង'; }
+    function fallback(){
+      var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); done(); }catch(e){}
+      document.body.removeChild(ta);
+    }
+    try{ navigator.clipboard.writeText(text).then(done, fallback); }catch(e){ fallback(); }
+  });
+
+  /* ===== បញ្ជាក់ការទិញ ===== */
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var g = GAMES[state.game], p = g.packs[state.pack], isText = g.idType === 'text';
+    var acct = validateAccount(); if(!acct) return;
+    var pid = acct.pid, sid = acct.sid;
+    var idText = g.server ? pid + ' (Server ' + sid + ')' : pid;
+    startPayment({
+      usd: p[1], kind: 'topup',
+      itemText: g.name + ' ' + g.region + ' · ' + fmt(p[0]) + ' ' + g.unitKm,
+      rows: [
+        ['លេខបញ្ជាទិញ', ''],
+        ['ហ្គេម', g.name + ' ' + g.region],
+        [isText ? 'Username' : 'Player ID', idText],
+        ['កញ្ចប់', fmt(p[0]) + ' ' + g.unit],
+        ['វិធីបង់', PAYS[state.pay].name]
+      ]
+    });
+  });
+
+  /* បើកផ្ទាំង QR សម្រាប់បញ្ជាទិញណាមួយ (ហ្គេម ឬគណនី) */
+  function startPayment(opt){
+    var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', code = (opt.kind === 'account' ? 'JA-' : 'JL-');
+    for(var i = 0; i < 6; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
+    opt.rows[0][1] = code;
+    currentOrder = {
+      code: code, usd: opt.usd, done: false, kind: opt.kind,
+      usdText: usd(opt.usd), rielText: '≈ ' + riel(opt.usd),
+      rows: opt.rows
+    };
+    $('#qrItem').textContent = opt.itemText;
+    $('#payView').hidden = false; $('#receiptView').hidden = true;
+    renderQR();
+    if(typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+    $('#dlgTitle').focus({preventScroll:true}); dlg.scrollTop = 0;
+  }
+
+  /* Gem tilt (pointer only) */
+  var hero = $('#banner'), gem = $('#heroGem');
+  if(!reduced && window.matchMedia('(pointer:fine)').matches){
+    hero.addEventListener('pointermove', function(e){
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      gem.style.setProperty('--ry', (x * 24) + 'deg');
+      gem.style.setProperty('--rx', (-y * 18) + 'deg');
+    });
+    hero.addEventListener('pointerleave', function(){
+      gem.style.setProperty('--ry','0deg'); gem.style.setProperty('--rx','0deg');
+    });
+  }
+
+  /* Mode switch: Topup Diamond vs Buy Account */
+  var gamesSec = $('#games'), accSec = $('#accounts');
+  var modeTopupBtn = $('#modeTopupBtn'), modeAccountBtn = $('#modeAccountBtn');
+  function setMode(mode, scroll){
+    var isAcc = mode === 'account';
+    gamesSec.hidden = isAcc; accSec.hidden = !isAcc;
+    modeTopupBtn.setAttribute('aria-selected', String(!isAcc));
+    modeAccountBtn.setAttribute('aria-selected', String(isAcc));
+    if(scroll){ (isAcc ? accSec : gamesSec).scrollIntoView({block:'start', behavior: reduced ? 'auto' : 'smooth'}); }
+  }
+  modeTopupBtn.addEventListener('click', function(){ setMode('topup', true); });
+  modeAccountBtn.addEventListener('click', function(){ setMode('account', true); });
+  document.querySelectorAll('.nav a[data-mode]').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); setMode(a.getAttribute('data-mode'), true); });
+  });
+
+  renderCards(); renderAccounts(); renderTicker();
+  if(SC && !ORDERS.length) $('.ticker').hidden = true;
+  route();
+})();
+</script>
+</body>
+</html>
